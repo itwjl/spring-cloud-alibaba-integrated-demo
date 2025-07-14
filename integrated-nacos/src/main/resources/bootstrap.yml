@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: application-nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: d028c27f-4318-4f5a-8ada-9df53409b209
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        namespace: d028c27f-4318-4f5a-8ada-9df53409b209
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
