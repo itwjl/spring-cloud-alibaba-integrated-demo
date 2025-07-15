@@ -12,8 +12,3 @@ spring:
         server-addr: 123.56.133.1:8848
         file-extension: yaml
         namespace: b9f91837-f177-4949-905e-2c20d1fec18e
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health

@@ -1,17 +1,25 @@
-
 spring:
+  profiles:
+    active: dev
+  application:
+    name: gateway-server
   cloud:
     nacos:
+      discovery:
+        server-addr: 123.56.133.1:8848
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: 123.56.133.1:8848
         file-extension: yaml
-    bootstrap:
-      enable: true
-  config:
-    activate:
-      on-profile: gateway
-management:
-  endpoint:
-    web:
-      exposure:
-        include: *
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: router01
+          uri: lb://nacos-server
+          predicates:
+            - Path=/nacos/api/**
+          filters:
+            - StripPrefix=1
