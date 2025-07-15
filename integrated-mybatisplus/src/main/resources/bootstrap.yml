@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: mybatisplus-server
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 123.56.133.1:8848
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+      discovery:
+        server-addr: 123.56.133.1:8848
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.56.133.1:3306/cmpt?userSSL=false
+    username: root
+    password: 123456
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.cmpt.mybatisplus.entity
