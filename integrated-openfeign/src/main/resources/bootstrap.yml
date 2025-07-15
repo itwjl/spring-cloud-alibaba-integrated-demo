@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: openfeign-server
+  cloud:
+    nacos:
+      config:
+        server-addr: 123.56.133.1:8848
+        file-extension: yaml
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+      discovery:
+        server-addr: 123.56.133.1:8848
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+feign:
+  circuitbreaker:
+    enabled: true
+
+#   熔断配置
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 5000 # 设置Hystrix超时时间（毫秒）
+    ProductFeignClient#getProducts:
+      execution.isolation.thread.timeoutInMilliseconds: 2000 # 为特定的Feign方法设置超时时间

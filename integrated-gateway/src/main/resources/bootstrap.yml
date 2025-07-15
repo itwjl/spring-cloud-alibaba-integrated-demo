@@ -12,14 +12,26 @@ spring:
         server-addr: 123.56.133.1:8848
         file-extension: yaml
         namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+    loadbalancer:
+      ribbon:
+        enable: false
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
+        # Nacos 路由配置
         - id: router01
           uri: lb://nacos-server
           predicates:
             - Path=/nacos/api/**
-          filters:
-            - StripPrefix=1
+        # mybatis-pus 路由配置
+        - id: route-mybatisplus
+          uri: lb://mybatisplus-server
+          predicates:
+            - Path=/mybatisplus/api/**
+        # openfeign 路由配置
+        - id: route-openfeign
+          uri: lb://openfeign-server
+          predicates:
+            - Path=/openfeign/api/**

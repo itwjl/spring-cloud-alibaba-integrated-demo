@@ -25,8 +25,9 @@ public class UserController {
     @Resource
     private UserMapper userMapper;
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public String save() {
+        System.out.println(LocalDateTime.now() + "请求添加用户接口");
         User user = new User();
         user.setUsername("张三");
         user.setPassword("123456");
