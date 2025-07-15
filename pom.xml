@@ -23,6 +23,7 @@
         <module>integrated-seata</module>
         <module>integrated-gateway</module>
         <module>integrated-nacos</module>
+        <module>integrated-log</module>
     </modules>
 
     <properties>

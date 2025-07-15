@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: log-server
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+        server-addr: 123.56.133.1:8848
+      config:
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+        server-addr: 123.56.133.1:8848
+        file-extension: yaml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.56.133.1:3306/cmpt?userSSL=false
+    username: root
+    password: 123456
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.cmpt.log.entity
+logging:
+  level:
+    com.cmpt.log.mapper: debug

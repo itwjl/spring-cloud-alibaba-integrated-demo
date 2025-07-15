@@ -35,3 +35,8 @@ spring:
           uri: lb://openfeign-server
           predicates:
             - Path=/openfeign/api/**
+        # log 路由配置
+        - id: route-log
+          uri: lb://log-server
+          predicates:
+            - Path=/log/api/**
