@@ -4,7 +4,7 @@
 2. 集成注册中心&配置中心组件 Nacos 示例
 3. 集成远程过程调用组件 OpenFeign 示例
 4. 集成持久层框架 mybatis-plus 示例
-5. 集成接口文档 swagger3 示例
+5. 集成接口文档 swagger3 + knife4j 示例
 6. 集成缓存层框架 Redis集群 示例
 7. 集成消息队列 Kafka 示例
 8. 集成熔断与限流框架 sentinel 示例

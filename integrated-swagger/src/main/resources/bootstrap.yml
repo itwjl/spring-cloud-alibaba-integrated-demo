@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: swagger-server
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+        server-addr: 123.56.133.1:8848
+        file-extension: yaml
+      discovery:
+        namespace: b9f91837-f177-4949-905e-2c20d1fec18e
+        server-addr: 123.56.133.1:8848
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+swagger3:
+  name: swagger
+  version: V1.0
+  copyright-year: 2025
+
+swagger:
+  enabled: true
